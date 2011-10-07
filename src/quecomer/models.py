@@ -22,11 +22,12 @@ class Ingrediente (models.Model):
 
 class Plato (models.Model):
     nombre = models.CharField(max_length=200)
-    fotoUrl = models.CharField(max_length=200)
+    fotoUrl = models.CharField(max_length=200, blank=True)
+    texto = models.CharField(max_length=2000, blank=True)
     ingrediente1 = models.ForeignKey('Ingrediente', related_name='ing1')
-    ingrediente2 = models.ForeignKey('Ingrediente', related_name='ing2')
+    ingrediente2 = models.ForeignKey('Ingrediente', related_name='ing2', blank=True)
     ratio_ing1 = models.IntegerField()
-    ratio_ing2 = models.IntegerField()
+    ratio_ing2 = models.IntegerField(blank=True)
     gramos = models.IntegerField()
     kcal = models.IntegerField()
 #    foto = models.ImageField() #falta upload_to
