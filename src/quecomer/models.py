@@ -26,10 +26,10 @@ class Plato (models.Model):
     texto = models.CharField(max_length=2000, blank=True)
     ingrediente1 = models.ForeignKey('Ingrediente', related_name='ing1')
     ingrediente2 = models.ForeignKey('Ingrediente', related_name='ing2', blank=True)
-    ratio_ing1 = models.IntegerField()
+    ratio_ing1 = models.IntegerField(blank=True)
     ratio_ing2 = models.IntegerField(blank=True)
-    gramos = models.IntegerField()
-    kcal = models.IntegerField()
+    gramos = models.IntegerField(blank=True)
+    kcal = models.IntegerField(blank=True)
 #    foto = models.ImageField() #falta upload_to
     def __unicode__(self):
         return self.nombre
