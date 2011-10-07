@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<h1>Que Comer</h1>
+		<p>Detalle de un plato:
+			<ul>Nombre:	{{ detalle_plato.nombre }}</ul>
+			<ul>Kcal:	{{ detalle_plato.kcal }}</ul>
+			<img src="{{ detalle_plato.fotoUrl }}"/>
+		</p>
+		<h2>Modifica este plato</h2>
+		<form action="/platos/{{detalle_plato.id}}/edit" method="post">{% csrf_token %}
+		{{ formset }}
+		<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>
