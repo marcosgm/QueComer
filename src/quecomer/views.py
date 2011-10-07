@@ -11,7 +11,7 @@ from django.forms.models import modelformset_factory
 
 def index(request):
     platos = Plato.objects.all()
-    t = loader.get_template('index.html')
+    t = loader.get_template('main.html')
     c = Context({
         'lista_platos': platos,
     })

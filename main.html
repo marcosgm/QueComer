@@ -16,16 +16,15 @@ Ayuda<br>
       </td>
       <td style="vertical-align: top; width: 585px;">Bienvenidos<br>
 Esta esla web inicial<br>
-de<br>
-de<br>
-de<br>
-de<br>
-de<br>
-d<br>
-d<br>
-e<br>
-ed<br>
-ed<br>
+<p>Lista de platos
+			<ul>
+				{% for plato in lista_platos %}
+					<li>
+						<a href="platos/{{plato.id}}">{{plato.nombre}}</a>
+					</li>
+				{% endfor %}
+			</ul>	
+		</p>
       </td>
     </tr>
     <tr>
