@@ -11,7 +11,7 @@ from django.forms.models import modelformset_factory
 
 def index(request):
     platos = Plato.objects.all()
-    t = loader.get_template('main.html')
+    t = loader.get_template('inicio.txt')
     c = Context({
         'lista_platos': platos,
     })
@@ -19,7 +19,7 @@ def index(request):
 
 def detalle_plato(request, idplato):
     p = get_object_or_404(Plato,pk=idplato)
-    return render_to_response('detail.html', {'detalle_plato': p},   context_instance=RequestContext(request))
+    return render_to_response('detalle.txt', {'detalle_plato': p},   context_instance=RequestContext(request))
 def edit_plato(request, idplato):
     PlatoFormSet = modelformset_factory(Plato)
     if request.method=='POST':

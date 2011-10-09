@@ -1,7 +1,7 @@
-<html>
-	<body>
-		<h1>Que Comer</h1>
-		<p>Detalle de un plato:
+{% extends "base.html" %}
+{% block contenido %}
+
+<p>Detalle de un plato:
 			<ul>Nombre:	{{ detalle_plato.nombre }}</ul>
 			<ul>Kcal:	{{ detalle_plato.kcal }}</ul>
 			<img src="{{ detalle_plato.fotoUrl }}"/>
@@ -11,5 +11,5 @@
 		{{ formset }}
 		<input type="submit" value="Submit" />
 		</form>
-	</body>
-</html>
+
+{% endblock %}

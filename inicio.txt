@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block contenido %}
+      
+<p>Lista de platos </p>
+
+      
+<ul>
+
+{% for plato in lista_platos %}
+        <li> <a href="platos/{{plato.id}}">{{plato.nombre}}</a>
+        </li>
+{% endfor %}
+      
+</ul>
+
+
+{% endblock %}
