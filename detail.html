@@ -16,17 +16,17 @@ Ingredientes<br>
 Sugerencias<br>
 Ayuda<br>
       </td>
-      <td style="vertical-align: top; width: 585px;">Bienvenidos<br>
-Esta esla web inicial<br>
-<p>Lista de platos
-			<ul>
-				{% for plato in lista_platos %}
-					<li>
-						<a href="platos/{{plato.id}}">{{plato.nombre}}</a>
-					</li>
-				{% endfor %}
-			</ul>	
+      <td style="vertical-align: top; width: 585px;">		
+      	<p>Detalle de un plato:
+			<ul>Nombre:	{{ detalle_plato.nombre }}</ul>
+			<ul>Kcal:	{{ detalle_plato.kcal }}</ul>
+			<img src="{{ detalle_plato.fotoUrl }}"/>
 		</p>
+		<h2>Modifica este plato</h2>
+		<form action="/platos/{{detalle_plato.id}}/edit" method="post">{% csrf_token %}
+		{{ formset }}
+		<input type="submit" value="Submit" />
+		</form>
       </td>
     </tr>
     <tr>

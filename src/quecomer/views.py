@@ -19,7 +19,7 @@ def index(request):
 
 def detalle_plato(request, idplato):
     p = get_object_or_404(Plato,pk=idplato)
-    return render_to_response('detalle_plato.html', {'detalle_plato': p},   context_instance=RequestContext(request))
+    return render_to_response('detail.html', {'detalle_plato': p},   context_instance=RequestContext(request))
 def edit_plato(request, idplato):
     PlatoFormSet = modelformset_factory(Plato)
     if request.method=='POST':
