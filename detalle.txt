@@ -3,8 +3,13 @@
 
 <p>Detalle de un plato:
 			<ul>Nombre:	{{ detalle_plato.nombre }}</ul>
+			<img src="{{ detalle_plato.fotoUrl }}" width="260" height="160"/>
+			<ul>Gramos:	{{ detalle_plato.gramos }}</ul>
 			<ul>Kcal:	{{ detalle_plato.kcal }}</ul>
-			<img src="{{ detalle_plato.fotoUrl }}"/>
+			<ul>Ing1:	{{ detalle_plato.ingrediente1 }}</ul>
+			<ul>Ing2:	{{ detalle_plato.ingrediente2 }}</ul>
+			<ul>RatioIng1:	{{ detalle_plato.ratio_ing1 }}, {{detalle_plato.getGramosIng1}} gramos</ul>
+			<ul>RatioIng2:	{{ detalle_plato.ratio_ing2 }}, {{detalle_plato.getGramosIng2}} gramos</ul>
 		</p>
 		<h2>Modifica este plato</h2>
 		<form action="/platos/{{detalle_plato.id}}/edit" method="post">{% csrf_token %}

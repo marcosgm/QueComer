@@ -33,7 +33,11 @@ class Plato (models.Model):
 #    foto = models.ImageField() #falta upload_to
     def __unicode__(self):
         return self.nombre
-    
+    def getGramosIng1(self):
+        return self.ratio_ing1*self.gramos/100
+    def getGramosIng2(self):
+        return self.ratio_ing2*self.gramos/100
+        
 class PlatoForm (ModelForm):
     class Meta:
         model=Plato
