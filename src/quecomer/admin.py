@@ -8,4 +8,5 @@ class IngredienteAdmin(admin.ModelAdmin):
 admin.site.register(Ingrediente,IngredienteAdmin)
 admin.site.register(TipoAlimento)
 admin.site.register(Plato)
+admin.site.register(Receta)
 #admin.site.register(UserPref)

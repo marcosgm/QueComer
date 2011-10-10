@@ -8,6 +8,7 @@ urlpatterns = patterns('',
                        
     (r'^quecomer/$', 'quecomer.views.index'),
     (r'^quecomer/platos/(?P<idplato>\d+)$', 'quecomer.views.detalle_plato'),
+    (r'^quecomer/recetas/(?P<idreceta>\d+)$', 'quecomer.views.detalle_receta'),
     (r'^quecomer/platos/(?P<idplato>\d+)/edit$', 'quecomer.views.edit_plato'),
 
     # Example:

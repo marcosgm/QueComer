@@ -2,15 +2,23 @@
 {% block contenido %}
       
 <p>Lista de platos </p>
-
       
 <ul>
-
 {% for plato in lista_platos %}
         <li> <a href="platos/{{plato.id}}">{{plato.nombre}}</a>
         </li>
-{% endfor %}
-      
+{% endfor %}   
+</ul>
+
+
+<p>Lista de recetas </p>
+
+<ul>
+
+{% for receta in lista_recetas %}
+        <li> <a href="recetas/{{receta.id}}">{{receta.nombre}}</a>
+        </li>
+{% endfor %}      
 </ul>
 
 

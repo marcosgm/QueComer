@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+<p>Detalle de una receta:
+			<ul>Nombre:	{{ detalle_receta.nombre }}</ul>
+			<img src="{{ detalle_receta.fotoUrl }}" width="260" height="160"/>
+			<ul>Texto ingredientes:	{{ detalle_receta.ingredientesTexto }}</ul>
+			<ul>Descripcion:	{{ detalle_receta.descripcion }}</ul>
+			<ul>Elaboracion:	{{ detalle_receta.elaboracion }}</ul>
+			<ul>Ingredientes:
+			{% for ingrediente in detalle_receta.ingredientes.all %}
+				<li>{{ingrediente.nombre}} del tipo {{ingrediente.nombre}}</li> 	
+			{% endfor %}
+		</p>
+
+{% endblock %}

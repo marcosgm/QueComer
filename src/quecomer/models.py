@@ -11,6 +11,9 @@ class TipoAlimento (models.Model):
 
 
 class Ingrediente (models.Model):
+    '''
+    Esta clase guarda un ingrediente. Se tipifican los gramos relativos de cada grupo nutricional por cada 100gr de ingrediente
+    '''
     nombre = models.CharField(max_length=200)
     tipo = models.ForeignKey('TipoAlimento')
     grCHidratox100 = models.IntegerField()
@@ -20,6 +23,18 @@ class Ingrediente (models.Model):
     def __unicode__(self):
         return self.nombre
 
+class Receta (models.Model):
+    nombre = models.CharField(max_length=200)
+    fotoUrl = models.CharField(max_length=200, blank=True)
+    descripcion = models.CharField(max_length=2000, blank=True)
+    elaboracion = models.CharField(max_length=2000, blank=True)
+    ingredientesTexto = models.CharField(max_length=2000, blank=True)
+    kcalRacion = models.IntegerField(blank=True)
+    ingredientes = models.ManyToManyField(Ingrediente)
+#    foto = models.ImageField() #falta upload_to
+    def __unicode__(self):
+        return self.nombre
+ 
 class Plato (models.Model):
     nombre = models.CharField(max_length=200)
     fotoUrl = models.CharField(max_length=200, blank=True)
